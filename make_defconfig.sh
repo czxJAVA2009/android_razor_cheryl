@@ -1,7 +1,8 @@
 #!/bin/bash
 
 DEFCONFIG_FILE="cheryl_defconfig"
-TOOLCHAIN=$HOME/Android/Razer/toolchains/aarch64-linux-android-6.x
+KERNEL_DIR=$(pwd)
+TOOLCHAIN=$KERNEL_DIR/arm64-tc
 export CROSS_COMPILE=$TOOLCHAIN/bin/aarch64-linux-android-
 
 if [ -z "$DEFCONFIG_FILE" ]; then

@@ -26,7 +26,7 @@ export ARCH=arm64
 export SUBARCH=arm64
 export LOCALVERSION=-`echo $VER`
 # directory containing cross-compile arm64 toolchain
-TOOLCHAIN=$HOME/Android/Razer/toolchains/aarch64-linux-android-6.x
+TOOLCHAIN=$KERNEL_DIR/arm64-tc
 export CROSS_COMPILE=$TOOLCHAIN/bin/aarch64-linux-android-
 
 function clean_all {
@@ -105,12 +105,12 @@ do
         make_zip
         echo
         echo "-----------------------------------------"
-        echo "-Kernel image build successfull for $ROM-"
+        echo "-Kernel image build successfull for $VER "
         echo "-----------------------------------------"
         echo
       else
         echo "-------------------------------------------"
-        echo "-Kernel image build unsuccessfull for $ROM-"
+        echo "-Kernel image build unsuccessfull for $VER "
         echo "-------------------------------------------"
       fi
       DATE_END=$(date +"%s")
