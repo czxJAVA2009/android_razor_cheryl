@@ -46,8 +46,8 @@ function make_kernel {
 
 function make_modules {
   pwd
-  rm AnyKernel/modules/system/lib/modules/*.ko
-  find $KERNEL_DIR -name '*.ko' -exec cp -vrf {} $MODULES_DIR \;
+  rm AnyKernel/modules/system/lib/modules/br_netfilter.ko
+  find $KERNEL_DIR -name '*.ko' -exec cp -ru {} $MODULES_DIR \;
   ${CROSS_COMPILE}strip --strip-unneeded $MODULES_DIR/*
 }
 
