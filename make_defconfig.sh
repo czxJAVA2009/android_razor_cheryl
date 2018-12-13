@@ -23,8 +23,7 @@ make ARCH=arm64 ${DEFCONFIG_FILE}
 env KCONFIG_NOTIMESTAMP=true \
 make menuconfig ARCH=arm64
 
-make savedefconfig ARCH=arm64
 # copy .config to defconfig
-mv defconfig arch/arm64/configs/${DEFCONFIG_FILE}
+mv .config arch/arm64/configs/${DEFCONFIG_FILE}
 # clean kernel object
 make mrproper
